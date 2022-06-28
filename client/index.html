@@ -1,0 +1,96 @@
+<!--
+//////////////////////////////////////////////////////////////////////////////////
+//
+JSDraw
+// Copyright Scilligence Corporation, 2009-2017
+// http://www.scilligence.com/
+//
+//////////////////////////////////////////////////////////////////////////////////
+-->
+
+<!DOCTYPE html>
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Molecular Structure Editor</title>
+
+    <script type="text/javascript" src='Scilligence.JSDraw2.UI.js'></script>
+    <script type="text/javascript" src='Scilligence.JSDraw2.Pro.js'></script>
+    <script type="text/javascript" src='Service.aspx'></script>
+	<script type="text/javascript" src='Scilligence.Icons.js'></script>
+
+
+</head>
+<body>
+
+    <h2> The Chemical Structure Editor</h2>
+
+    <table border=1>
+     <tbody>
+      <tr>
+       <td>
+           " Editor: "
+           <svg viewBox="0 0 480.001 480.001" style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><g transform="scale(0.9,0.9) translate(2, 2)"><path d="M333.142,350.846c0.115-0.115,0.215-0.239,0.323-0.357l129.681-129.706c10.878-10.878,16.864-25.368,16.855-40.8 c-0.01-15.409-5.999-29.865-16.854-40.694l-97.844-97.874c-10.853-10.845-25.326-16.817-40.75-16.817 c-15.426,0-29.895,5.974-40.741,16.82L16.855,308.329C5.974,319.21-0.012,333.713,0,349.168 c0.013,15.425,6.002,29.884,16.854,40.7l62.592,62.606c0.061,0.061,0.127,0.112,0.188,0.171c0.174,0.165,0.349,0.331,0.534,0.483 c0.082,0.067,0.171,0.126,0.255,0.19c0.175,0.135,0.349,0.271,0.532,0.395c0.07,0.047,0.145,0.085,0.215,0.13 c0.205,0.131,0.412,0.26,0.627,0.376c0.051,0.026,0.103,0.048,0.154,0.074c0.239,0.123,0.482,0.241,0.732,0.346 c0.033,0.014,0.067,0.024,0.101,0.037c0.269,0.108,0.54,0.208,0.819,0.293c0.034,0.011,0.07,0.017,0.104,0.027 c0.276,0.081,0.556,0.154,0.841,0.211c0.082,0.017,0.165,0.023,0.247,0.038c0.239,0.041,0.479,0.084,0.724,0.107 c0.33,0.033,0.663,0.051,0.998,0.051h137.91h159.308c5.522,0,10-4.478,10-10c0-5.522-4.478-10-10-10H248.566l84.22-84.236 C332.904,351.06,333.027,350.96,333.142,350.846z M220.285,435.404H90.66l-59.675-59.689 c-7.076-7.054-10.977-16.487-10.985-26.563c-0.008-10.106,3.897-19.582,10.996-26.681l129.825-129.803l151.091,151.091 L220.285,435.404z M174.965,178.527L297.953,55.56c7.069-7.069,16.516-10.963,26.6-10.963c10.085,0,19.536,3.895,26.609,10.962 l97.85,97.88c7.08,7.063,10.982,16.493,10.989,26.557c0.006,10.085-3.899,19.547-10.998,26.645l-122.95,122.974L174.965,178.527z"></path></g></svg>
+           <svg viewBox="0 0 24 24" style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"></path></svg>
+           <svg viewBox="0 0 100 100" style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><g transform="rotate(45)"><path d="M30 -2 h80 v8 h-80 v-8 z"></path></g></svg>
+           <svg viewBox="0 0 512 512" style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px; background: yellow;"><path d="M256,0L34.298,128v255.999L256,512l221.702-128.001V128L256,0z M256,473.828L67.356,364.914V147.085L256,38.172 l188.644,108.913v217.829h0L256,473.828z"></path><rect x="371.26" y="160.95" width="33.06" height="190.12"></rect><rect x="94.822" y="124.941" transform="matrix(0.866 -0.5 0.5 0.866 -45.2971 113.8941)" width="190.106" height="33.059"></rect><rect x="173.353" y="275.455" transform="matrix(0.5 -0.866 0.866 0.5 -225.9277 349.6915)" width="33.059" height="190.106"></rect></svg>
+
+
+           <br>
+           <table autocomplete='off' cellspacing="0" cellpadding="0" unselectable="on" style="border: 1px solid rgb(204, 204, 204); background: rgb(255, 255, 255); user-select: none;">
+           <tbody autocomplete="off">
+            <tr autocomplete="off" style="background: rgb(255, 255, 255);"></tr>
+            <tr autocomplete="off">
+                <td autocomplete="off" colspan="2" style="border-top: 1px solid rgb(204, 204, 204);">
+
+                <div class='JSDraw' id="test" skin="w8" style="width: 660px; height: 300px; text-align: left; cursor: default; background: rgb(255, 255, 255); user-select: none;" ondatachange='molchange'
+                dataformat='molfile' data='
+
+                    ChemJSDraw11140919362D
+
+                      6  6  0  0  0  0  0  0  0  0  1 V2000
+                        3.5115   -9.3600    0.0000 C   0  0
+                        2.1605   -8.5800    0.0000 C   0  0
+                        2.1605   -7.0200    0.0000 C   0  0
+                        3.5115   -6.2400    0.0000 N   0  0
+                        4.8625   -7.0200    0.0000 C   0  0
+                        4.8625   -8.5800    0.0000 C   0  0
+                      1  2  1  0
+                      2  3  2  0
+                      3  4  1  0
+                      4  5  2  0
+                      5  6  1  0
+                      6  1  2  0
+            M  END' __ajaxform="1" unselectable="on">
+        <g viewBox="0 0 660 230" width="660" height="230" style="display: block;">
+
+            <g __surface_parentid='test' transform='translate(0,0)">
+                      <g __surface_parentid='test'>
+                    <line x1="330" y1="179.9999938362938" x2="304.0192361071584" y2="164.9999969181469" style="stroke: black; stroke-width: 2; stroke-linecap: round;"></line>
+                    <line x1="304.0192361071584" y1="164.9999969181469" x2="304.0192361071584" y2="135.0000030818531" style="stroke: black; stroke-width: 2; stroke-linecap: round;"></line>
+                    <line x1="308.0192361071584" y1="161.24999768861016" x2="308.0192361071584" y2="138.7500023113898" style="stroke: black; stroke-width: 2; stroke-linecap: round;"></line>
+                    <line x1="304.0192361071584" y1="135.0000030818531" x2="322.72538611000437" y2="124.20000530078732" style="stroke: black; stroke-width: 2; stroke-linecap: round;"></line>
+                    <line x1="337.27461388999563" y1="124.20000530078732" x2="355.98076389284165" y2="135.0000030818531" style="stroke: black; stroke-width:2; stroke-linecap: round;"></line>
+                    <line x1="337.612883051" y1="129.01410687579943" x2="351.64249555339967" y2="137.11410521159877" style="stroke: black; stroke-width:2; stroke-linecap: round;"></line>
+                    <line x1="355.98076389284165" y1="135.0000030818531" x2="355.98076389284165" y2="164.9999969181469" style="stroke: black; stroke-width:2; stroke-linecap: round;"></line>
+                    <line x1="355.98076389284165" y1="164.9999969181469" x2="330" y2="179.9999938362938" style="stroke: black; stroke-width:2; stroke-linecap: round;"></line>
+                    <line x1="350.7331688171502" y1="163.4108946805364" x2="331.247595897519" y2="174.66089236914655" style="stroke: black; stroke-width:2; stroke-linecap: round;"></line>
+                    </g>
+                    <g __surface_parentid='test'></g>
+                    </g>
+                    </svg>
+                </div>
+                </td>
+            </tr>
+           </tbody>
+           </table>
+          </td>
+        </tr>
+     </tbody>
+    </table>
+
+</body>
+</html>
