@@ -10,87 +10,1436 @@ JSDraw
 
 <!DOCTYPE html>
 <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>Molecular Structure Editor</title>
+    <head>
 
-    <script type="text/javascript" src='Scilligence.JSDraw2.UI.js'></script>
-    <script type="text/javascript" src='Scilligence.JSDraw2.Pro.js'></script>
-    <script type="text/javascript" src='Service.aspx'></script>
-	<script type="text/javascript" src='Scilligence.Icons.js'></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <title>Molecular Structure Editor</title>
+
+        <script type="text/javascript" src='Scilligence.JSDraw2.UI.js'></script>
+        <script type="text/javascript" src='Scilligence.JSDraw2.Pro.js'></script>
+        <script type="text/javascript" src='Service.aspx'></script>
+        <script type="text/javascript" src='Scilligence.Icons.js'></script>
+
+        <style type="text/css">.scil_table td a{white-space:nowrap;}</style>
+        <style type="text/css">input._scil_dropdown::-ms-clear {display: none;}</style>
 
 
-</head>
-<body>
+    </head>
+
+    <body>
 
     <h2> The Chemical Structure Editor</h2>
 
     <table border=1>
-     <tbody>
-      <tr>
-       <td>
-           " Editor: "
-           <svg viewBox="0 0 480.001 480.001" style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><g transform="scale(0.9,0.9) translate(2, 2)"><path d="M333.142,350.846c0.115-0.115,0.215-0.239,0.323-0.357l129.681-129.706c10.878-10.878,16.864-25.368,16.855-40.8 c-0.01-15.409-5.999-29.865-16.854-40.694l-97.844-97.874c-10.853-10.845-25.326-16.817-40.75-16.817 c-15.426,0-29.895,5.974-40.741,16.82L16.855,308.329C5.974,319.21-0.012,333.713,0,349.168 c0.013,15.425,6.002,29.884,16.854,40.7l62.592,62.606c0.061,0.061,0.127,0.112,0.188,0.171c0.174,0.165,0.349,0.331,0.534,0.483 c0.082,0.067,0.171,0.126,0.255,0.19c0.175,0.135,0.349,0.271,0.532,0.395c0.07,0.047,0.145,0.085,0.215,0.13 c0.205,0.131,0.412,0.26,0.627,0.376c0.051,0.026,0.103,0.048,0.154,0.074c0.239,0.123,0.482,0.241,0.732,0.346 c0.033,0.014,0.067,0.024,0.101,0.037c0.269,0.108,0.54,0.208,0.819,0.293c0.034,0.011,0.07,0.017,0.104,0.027 c0.276,0.081,0.556,0.154,0.841,0.211c0.082,0.017,0.165,0.023,0.247,0.038c0.239,0.041,0.479,0.084,0.724,0.107 c0.33,0.033,0.663,0.051,0.998,0.051h137.91h159.308c5.522,0,10-4.478,10-10c0-5.522-4.478-10-10-10H248.566l84.22-84.236 C332.904,351.06,333.027,350.96,333.142,350.846z M220.285,435.404H90.66l-59.675-59.689 c-7.076-7.054-10.977-16.487-10.985-26.563c-0.008-10.106,3.897-19.582,10.996-26.681l129.825-129.803l151.091,151.091 L220.285,435.404z M174.965,178.527L297.953,55.56c7.069-7.069,16.516-10.963,26.6-10.963c10.085,0,19.536,3.895,26.609,10.962 l97.85,97.88c7.08,7.063,10.982,16.493,10.989,26.557c0.006,10.085-3.899,19.547-10.998,26.645l-122.95,122.974L174.965,178.527z"></path></g></svg>
-           <svg viewBox="0 0 24 24" style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"></path></svg>
-           <svg viewBox="0 0 100 100" style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><g transform="rotate(45)"><path d="M30 -2 h80 v8 h-80 v-8 z"></path></g></svg>
-           <svg viewBox="0 0 512 512" style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px; background: yellow;"><path d="M256,0L34.298,128v255.999L256,512l221.702-128.001V128L256,0z M256,473.828L67.356,364.914V147.085L256,38.172 l188.644,108.913v217.829h0L256,473.828z"></path><rect x="371.26" y="160.95" width="33.06" height="190.12"></rect><rect x="94.822" y="124.941" transform="matrix(0.866 -0.5 0.5 0.866 -45.2971 113.8941)" width="190.106" height="33.059"></rect><rect x="173.353" y="275.455" transform="matrix(0.5 -0.866 0.866 0.5 -225.9277 349.6915)" width="33.059" height="190.106"></rect></svg>
+         <tbody>
+            <tr>
+                <td>
+                    " Editor: "
+                    <br>
 
+                    <table autocomplete="off" cellspacing="0" unselectable="on"
+                           style="border: 1px solid rgb(204, 204, 204); background: rgb(255, 255, 255); user-select: none;">
+                        <tbody autocomplete="off">
+                            <tr>
+                            <tr autocomplete="off" style="background: rgb(255, 255, 255);">
+                                <td autocomplete="off">
+                                    <table autocomplete="off" cellspacing="0" cellpadding="0" align="center"
+                                           style="margin-top: 2px; margin-bottom: 1px;">
+                                        <tbody autocomplete="off">
+                                        <tr autocomplete="off">
+                                            <td autocomplete="off">
+                                                <span width="42" height="42" autocomplete="off"
+                                                      cmd="new" title="New" id="__jsd_tb_test_new"
+                                                      style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                    <svg
+                                                        viewBox="0 0 1024 1024"
+                                                        style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                        <g
+                                                        transform="scale(0.9,0.9) translate(2, 2)">
+                                                            <path
+                                                                    d="M917.806 229.076c-22.212-30.292-53.174-65.7-87.178-99.704s-69.412-64.964-99.704-87.178c-51.574-37.82-76.592-42.194-90.924-42.194h-496c-44.112 0-80 35.888-80 80v864c0 44.112 35.888 80 80 80h736c44.112 0 80-35.888 80-80v-624c0-14.332-4.372-39.35-42.194-90.924zM785.374 174.626c30.7 30.7 54.8 58.398 72.58 81.374h-153.954v-153.946c22.984 17.78 50.678 41.878 81.374 72.572zM896 944c0 8.672-7.328 16-16 16h-736c-8.672 0-16-7.328-16-16v-864c0-8.672 7.328-16 16-16 0 0 495.956-0.002 496 0v224c0 17.672 14.326 32 32 32h224v624z">
 
-           <br>
-           <table autocomplete='off' cellspacing="0" cellpadding="0" unselectable="on" style="border: 1px solid rgb(204, 204, 204); background: rgb(255, 255, 255); user-select: none;">
-           <tbody autocomplete="off">
-            <tr autocomplete="off" style="background: rgb(255, 255, 255);"></tr>
-            <tr autocomplete="off">
-                <td autocomplete="off" colspan="2" style="border-top: 1px solid rgb(204, 204, 204);">
+                                                            </path>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                                <div autocomplete="off"
+                                                     style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                    New
+                                                </div>
+                                                <table autocomplete="off" cellspacing="0" cellpadding="0"
+                                                       id="__jsd_tb_test_new_sub"
+                                                       style="display: none; z-index: 99999999; border-radius: 4px; position: absolute; background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); padding: 2px;">
+                                                    <tbody autocomplete="off">
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off">
+                                                            <span width="42" height="42"
+                                                                                     autocomplete="off" cmd="save"
+                                                                                     title="Export"
+                                                                                     parent="__jsd_tb_test_new"
+                                                                                     style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                                    <path
+                                                                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z">
 
-                <div class='JSDraw' id="test" skin="w8" style="width: 660px; height: 300px; text-align: left; cursor: default; background: rgb(255, 255, 255); user-select: none;" ondatachange='molchange'
-                dataformat='molfile' data='
+                                                                    </path>
+                                                                    <g
+                                                                transform="rotate(180 12 15)">
+                                                                    <path
+                                                                d="M8 15.01l1.41 1.41L11 14.84V19h2v-4.16l1.59 1.59L16 15.01 12.01 11z">
 
-                    ChemJSDraw11140919362D
+                                                                    </path>
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Export
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;">
+                                                            <span
+                                                                width="42" height="42" autocomplete="off" cmd="open"
+                                                                title="Import" parent="__jsd_tb_test_new"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 15.01l1.41 1.41L11 14.84V19h2v-4.16l1.59 1.59L16 15.01 12.01 11z">
 
-                      6  6  0  0  0  0  0  0  0  0  1 V2000
-                        3.5115   -9.3600    0.0000 C   0  0
-                        2.1605   -8.5800    0.0000 C   0  0
-                        2.1605   -7.0200    0.0000 C   0  0
-                        3.5115   -6.2400    0.0000 N   0  0
-                        4.8625   -7.0200    0.0000 C   0  0
-                        4.8625   -8.5800    0.0000 C   0  0
-                      1  2  1  0
-                      2  3  2  0
-                      3  4  1  0
-                      4  5  2  0
-                      5  6  1  0
-                      6  1  2  0
-            M  END' __ajaxform="1" unselectable="on">
-        <g viewBox="0 0 660 230" width="660" height="230" style="display: block;">
+                                                                </path>
+                                                                </svg>
+                                                            </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Import
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="osr"
+                                                                title="OSA" parent="__jsd_tb_test_new"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M19.8 10.7L4.2 5l-.7 1.9L17.6 12H5c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-5.5c0-.8-.5-1.6-1.2-1.8zM7 17H5v-2h2v2zm12 0H9v-2h10v2z"></path></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                OSR
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="about"
+                                                                title="About JSDraw" parent="__jsd_tb_test_new"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M19.8,18.4L14,10.67V6.5l1.35-1.69C15.61,4.48,15.38,4,14.96,4H9.04C8.62,4,8.39,4.48,8.65,4.81L10,6.5v4.17L4.2,18.4 C3.71,19.06,4.18,20,5,20h14C19.82,20,20.29,19.06,19.8,18.4z"></path><text
+                                                                x="11.5" y="15"
+                                                                style="text-anchor: middle;alignment-baseline: central;font-family:Arial;font-weight: bold;font-size: 9px;fill: #fff;">S</text></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                About
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
 
-            <g __surface_parentid='test' transform='translate(0,0)">
-                      <g __surface_parentid='test'>
-                    <line x1="330" y1="179.9999938362938" x2="304.0192361071584" y2="164.9999969181469" style="stroke: black; stroke-width: 2; stroke-linecap: round;"></line>
-                    <line x1="304.0192361071584" y1="164.9999969181469" x2="304.0192361071584" y2="135.0000030818531" style="stroke: black; stroke-width: 2; stroke-linecap: round;"></line>
-                    <line x1="308.0192361071584" y1="161.24999768861016" x2="308.0192361071584" y2="138.7500023113898" style="stroke: black; stroke-width: 2; stroke-linecap: round;"></line>
-                    <line x1="304.0192361071584" y1="135.0000030818531" x2="322.72538611000437" y2="124.20000530078732" style="stroke: black; stroke-width: 2; stroke-linecap: round;"></line>
-                    <line x1="337.27461388999563" y1="124.20000530078732" x2="355.98076389284165" y2="135.0000030818531" style="stroke: black; stroke-width:2; stroke-linecap: round;"></line>
-                    <line x1="337.612883051" y1="129.01410687579943" x2="351.64249555339967" y2="137.11410521159877" style="stroke: black; stroke-width:2; stroke-linecap: round;"></line>
-                    <line x1="355.98076389284165" y1="135.0000030818531" x2="355.98076389284165" y2="164.9999969181469" style="stroke: black; stroke-width:2; stroke-linecap: round;"></line>
-                    <line x1="355.98076389284165" y1="164.9999969181469" x2="330" y2="179.9999938362938" style="stroke: black; stroke-width:2; stroke-linecap: round;"></line>
-                    <line x1="350.7331688171502" y1="163.4108946805364" x2="331.247595897519" y2="174.66089236914655" style="stroke: black; stroke-width:2; stroke-linecap: round;"></line>
-                    </g>
-                    <g __surface_parentid='test'></g>
-                    </g>
-                    </svg>
-                </div>
+                                            <td autocomplete="off">
+                                                <span width="42" height="42" autocomplete="off"
+                                                                         cmd="select" title="Box Selection"
+                                                                         id="__jsd_tb_test_select" pushed="1"
+                                                                         style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                    viewBox="0 0 24 24"
+                                                    style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px; background: yellow;"><path
+                                                    d="M17 5h-2V3h2v2zm-2 16h2v-2.59L19.59 21 21 19.59 18.41 17H21v-2h-6v6zm4-12h2V7h-2v2zm0 4h2v-2h-2v2zm-8 8h2v-2h-2v2zM7 5h2V3H7v2zM3 17h2v-2H3v2zm2 4v-2H3c0 1.1.9 2 2 2zM19 3v2h2c0-1.1-.9-2-2-2zm-8 2h2V3h-2v2zM3 9h2V7H3v2zm4 12h2v-2H7v2zm-4-8h2v-2H3v2zm0-8h2V3c-1.1 0-2 .9-2 2z"></path></svg></span>
+                                                <div autocomplete="off"
+                                                     style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                    Box
+                                                </div>
+                                                <table autocomplete="off" cellspacing="0" cellpadding="0"
+                                                       id="__jsd_tb_test_select_sub"
+                                                       style="display: none; z-index: 99999999; border-radius: 4px; position: absolute; background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); padding: 2px; margin-left: -25px;">
+                                                    <tbody autocomplete="off">
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off"><span width="42" height="42"
+                                                                                     autocomplete="off" cmd="lasso"
+                                                                                     title="Lasso Selection"
+                                                                                     parent="__jsd_tb_test_select"
+                                                                                     style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 496.149 496.149"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><g><path
+                                                                d="M250.201,81.608c97.43,0,179.746,43.434,179.746,94.834c0,12.449-4.934,24.449-13.645,35.465l35.402,10.404 c8.613-14.227,13.533-29.629,13.533-45.869c0-72.965-94.463-130.123-215.037-130.123S35.164,103.477,35.164,176.442 c0,26.918,12.936,51.643,35.189,72.172c-6.951,4.502-13.756,10.502-18.836,18.984c-10.453,17.449-10.66,39.094-0.645,64.35 c9.433,23.791,7.125,32.582,5.693,35.242c-3.354,6.322-18.127,9.514-32.385,12.596c-3.486,0.758-7.035,1.531-10.582,2.371 c-9.484,2.24-15.353,11.725-13.129,21.225c1.902,8.111,9.164,13.596,17.16,13.596c1.34,0,2.709-0.16,4.068-0.467 c3.32-0.791,6.656-1.518,9.932-2.227c21.111-4.564,45.016-9.742,56.076-30.482c8.486-15.902,7.195-36.516-4.031-64.85 c-5.725-14.435-6.385-25.564-1.947-33.098c4.965-8.451,16.141-12.207,22.19-13.467c35.705,19.902,82.85,32.354,135.592,33.869 l-10.504-35.74c-87.867-5.758-158.555-46.447-158.555-94.074C70.451,125.041,152.772,81.608,250.201,81.608z"></path><path
+                                                                d="M487.573,269.629l-222.049-65.271c-1.115-0.338-2.244-0.482-3.373-0.482c-3.113,0-6.158,1.227-8.434,3.5 c-3.096,3.08-4.258,7.613-3.018,11.789l65.271,222.102c1.34,4.613,5.352,7.982,10.143,8.5c0.453,0.047,0.891,0.064,1.322,0.064 c4.309,0,8.307-2.338,10.439-6.162l54.076-98.043l98.025-54.094c4.225-2.322,6.629-6.951,6.1-11.727 C495.561,275.018,492.201,271,487.573,269.629z"></path></g></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Lasso
+                                                            </div>
+                                                        </td>
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="selfrag"
+                                                                title="Select Fragment" parent="__jsd_tb_test_select"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 480.001 480.001"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><g><g><path
+                                                                d="M423.91,331.553L305.239,227.87c0.016-0.021,0.035-0.038,0.051-0.059c19.432-24.984,29.704-54.949,29.704-86.654 C334.993,63.323,271.67,0,193.836,0C115.998,0,52.672,63.323,52.672,141.157c0,38.852,14.169,74.717,39.897,100.988 c26.417,26.976,62.248,41.656,103.836,42.608l14.63,155.591c0.311,3.3,2.236,6.232,5.142,7.828 c1.497,0.823,3.155,1.235,4.814,1.235c1.559,0,3.12-0.364,4.55-1.095l86.558-44.229l39.318,70.772 c1.828,3.29,5.236,5.146,8.751,5.146c1.642,0,3.309-0.406,4.847-1.261c4.828-2.682,6.567-8.77,3.885-13.598l-38.98-70.166 l91.96-46.989c2.955-1.51,4.968-4.387,5.374-7.68C427.661,337.016,426.408,333.735,423.91,331.553z M72.672,141.157 C72.672,74.351,127.026,20,193.836,20c66.806,0,121.157,54.351,121.157,121.157c0,26.858-8.6,52.251-24.854,73.521l-24.743-21.617 c11.027-15.148,16.851-33.026,16.851-51.903c0-48.746-39.661-88.403-88.411-88.403c-48.75,0-88.411,39.657-88.411,88.403 c0,47.876,38.247,86.984,85.788,88.377l3.305,35.146C114.498,261.685,72.672,201.067,72.672,141.157z M188.583,134.308 c-3.643,1.865-5.782,5.763-5.398,9.838l6.137,65.266c-35.623-2.335-63.896-32.046-63.896-68.254 c0-37.718,30.689-68.403,68.411-68.403c37.722,0,68.411,30.686,68.411,68.403c0,13.999-4.141,27.281-11.992,38.675l-50.536-44.154 C196.638,132.986,192.226,132.445,188.583,134.308z M229.568,423.796l-24.124-256.559l194.186,169.66L229.568,423.796z"></path></g></g></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Fragment
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off"
+                                                                cmd="selectall" title="Select All"
+                                                                parent="__jsd_tb_test_select"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M3 5h2V3c-1.1 0-2 .9-2 2zm0 8h2v-2H3v2zm4 8h2v-2H7v2zM3 9h2V7H3v2zm10-6h-2v2h2V3zm6 0v2h2c0-1.1-.9-2-2-2zM5 21v-2H3c0 1.1.9 2 2 2zm-2-4h2v-2H3v2zM9 3H7v2h2V3zm2 18h2v-2h-2v2zm8-8h2v-2h-2v2zm0 8c1.1 0 2-.9 2-2h-2v2zm0-12h2V7h-2v2zm0 8h2v-2h-2v2zm-4 4h2v-2h-2v2zm0-16h2V3h-2v2zM7 17h10V7H7v10zm2-8h6v6H9V9z"></path></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                All
+                                                            </div>
+                                                        </td>
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="copy"
+                                                                title="Copy" parent="__jsd_tb_test_select"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Copy
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="cut"
+                                                                title="Cut" parent="__jsd_tb_test_select"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><circle
+                                                                cx="6" cy="18" fill="none" r="2"></circle><circle
+                                                                cx="12" cy="12" fill="none" r=".5"></circle><circle
+                                                                cx="6" cy="6" fill="none" r="2"></circle><path
+                                                                d="M9.64 7.64c.23-.5.36-1.05.36-1.64 0-2.21-1.79-4-4-4S2 3.79 2 6s1.79 4 4 4c.59 0 1.14-.13 1.64-.36L10 12l-2.36 2.36C7.14 14.13 6.59 14 6 14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4c0-.59-.13-1.14-.36-1.64L12 14l7 7h3v-1L9.64 7.64zM6 8c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm0 12c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm6-7.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zM19 3l-6 6 2 2 7-7V3z"></path></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Cut
+                                                            </div>
+                                                        </td>
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="paste"
+                                                                title="Paste" parent="__jsd_tb_test_select"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M19 2h-4.18C14.4.84 13.3 0 12 0c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm7 18H5V4h2v3h10V4h2v16z"></path></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Paste
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+
+                                            <td autocomplete="off">
+                                                <span width="42" height="42" autocomplete="off"
+                                                                         cmd="center" title="Move to center"
+                                                                         id="__jsd_tb_test_center"
+                                                                         style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                    viewBox="0 0 64.436 64.436"
+                                                    style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                    d="M63.27,31.05H42.693l10.2-10.203c0.457-0.455,0.457-1.195,0-1.651c-0.451-0.455-1.195-0.455-1.651,0L39.047,31.392c0,0,0,0-0.002,0l-0.823,0.826l0.823,0.825c0.002,0,0.002,0,0.002,0L51.242,45.24c0.233,0.229,0.532,0.34,0.828,0.34c0.297,0,0.598-0.114,0.828-0.34c0.452-0.456,0.452-1.197,0-1.651L42.693,33.386h20.575c0.643,0,1.168-0.524,1.168-1.168S63.911,31.05,63.27,31.05z"></path><path
+                                                    d="M25.391,33.043l0.827-0.825l-0.827-0.826h-0.002L13.19,19.195c-0.453-0.455-1.196-0.455-1.651,0c-0.453,0.456-0.453,1.196,0,1.651L21.74,31.05H1.168C0.523,31.05,0,31.574,0,32.218s0.523,1.168,1.168,1.168h20.574L11.539,43.589c-0.453,0.454-0.453,1.195,0,1.651c0.231,0.229,0.53,0.34,0.827,0.34s0.598-0.114,0.827-0.34L25.391,33.043C25.388,33.043,25.388,33.043,25.391,33.043z"></path><path
+                                                    d="M33.043,39.05L33.043,39.05l-0.825-0.826l-0.827,0.823c0,0,0,0,0,0.003l-12.2,12.192c-0.455,0.456-0.455,1.197,0,1.651c0.456,0.456,1.196,0.456,1.651,0l10.203-10.201v20.575c0,0.644,0.523,1.168,1.168,1.168c0.644,0,1.168-0.524,1.168-1.168V42.692l10.203,10.201c0.229,0.23,0.531,0.342,0.828,0.342c0.301,0,0.598-0.114,0.825-0.342c0.452-0.454,0.452-1.195,0-1.651L33.043,39.05z"></path><path
+                                                    d="M31.393,25.386L31.393,25.386l0.827,0.827l0.828-0.825l0,0l12.199-12.196c0.456-0.455,0.456-1.196,0-1.651s-1.195-0.455-1.651,0L33.39,21.742V1.168C33.39,0.523,32.866,0,32.222,0c-0.642,0-1.167,0.523-1.167,1.168v20.574L20.849,11.541c-0.453-0.455-1.195-0.455-1.65,0c-0.454,0.455-0.454,1.196,0,1.651L31.393,25.386z"></path></svg></span>
+                                                <div autocomplete="off"
+                                                     style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                    Center
+                                                </div>
+                                                <table autocomplete="off" cellspacing="0" cellpadding="0"
+                                                       id="__jsd_tb_test_center_sub"
+                                                       style="display: none; z-index: 99999999; border-radius: 4px; position: absolute; background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); padding: 2px;">
+                                                    <tbody autocomplete="off">
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off"><span width="42" height="42"
+                                                                                     autocomplete="off" cmd="zoomin"
+                                                                                     title="Zoom in"
+                                                                                     parent="__jsd_tb_test_center"
+                                                                                     style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path><path
+                                                                d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"></path></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Zoom
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="zoomout"
+                                                                title="Zoom out" parent="__jsd_tb_test_center"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zM7 9h5v1H7z"></path></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Zoom
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="rotate"
+                                                                title="Rotate" parent="__jsd_tb_test_center"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><g><rect
+                                                                fill="none"></rect></g><g><g><path
+                                                                d="M9,12c0,1.66,1.34,3,3,3s3-1.34,3-3s-1.34-3-3-3S9,10.34,9,12z"></path><path
+                                                                d="M8,10V8H5.09C6.47,5.61,9.05,4,12,4c3.72,0,6.85,2.56,7.74,6h2.06c-0.93-4.56-4.96-8-9.8-8C8.73,2,5.82,3.58,4,6.01V4H2v6 H8z"></path><path
+                                                                d="M16,14v2h2.91c-1.38,2.39-3.96,4-6.91,4c-3.72,0-6.85-2.56-7.74-6H2.2c0.93,4.56,4.96,8,9.8,8c3.27,0,6.18-1.58,8-4.01V20 h2v-6H16z"></path></g></g></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Rotate
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="fliph"
+                                                                title="Flip Horizontal" parent="__jsd_tb_test_center"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 512.043 512.043"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M194.61,14.291l-192,469.333c-5.742,14.035,4.581,29.411,19.745,29.411h192c11.782,0,21.333-9.551,21.333-21.333V22.368 C235.688-1.028,203.468-7.364,194.61,14.291z M193.022,470.368H54.132l138.89-339.509V470.368z"></path><path
+                                                                d="M511.433,483.624l-192-469.333c-8.858-21.654-41.078-15.318-41.078,8.077v469.333c0,11.782,9.551,21.333,21.333,21.333 h192C506.852,513.035,517.175,497.659,511.433,483.624z M321.022,470.368V130.859l138.89,339.509H321.022z"></path></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Flip
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="flipv"
+                                                                title="Flip Vertical" parent="__jsd_tb_test_center"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 512.043 512.043"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M491.701,278.355H22.368c-23.396,0-29.732,32.22-8.077,41.078l469.333,192c14.035,5.742,29.411-4.581,29.411-19.745v-192 C513.035,287.906,503.483,278.355,491.701,278.355z M470.368,459.912l-339.509-138.89h339.509V459.912z"></path><path
+                                                                d="M483.624,2.61l-469.333,192c-21.654,8.858-15.318,41.078,8.077,41.078h469.333c11.782,0,21.333-9.551,21.333-21.333v-192 C513.035,7.191,497.659-3.132,483.624,2.61z M470.368,193.022H130.859l339.509-138.89V193.022z"></path></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Flip
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+
+                                            <td autocomplete="off">
+                                                <span width="42" height="42" autocomplete="off"
+                                                                         cmd="moveview" title="Move/View"
+                                                                         id="__jsd_tb_test_moveview"
+                                                                         style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                    viewBox="0 0 24 24"
+                                                    style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                    d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"></path></svg></span>
+                                                <div autocomplete="off"
+                                                     style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                    Move
+                                                </div>
+                                                <table autocomplete="off" cellspacing="0" cellpadding="0"
+                                                       id="__jsd_tb_test_moveview_sub"
+                                                       style="display: none; z-index: 99999999; border-radius: 4px; position: absolute; background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); padding: 2px;">
+                                                    <tbody autocomplete="off">
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off"><span width="42" height="42"
+                                                                                     autocomplete="off" cmd="zoombox"
+                                                                                     title="Zoom Box"
+                                                                                     parent="__jsd_tb_test_moveview"
+                                                                                     style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 413.601 413.601"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M233.26,222.642c27.385-37.2,24.358-89.921-9.274-123.559c-37.089-37.084-97.433-37.084-134.525,0 c-37.084,37.09-37.084,97.439,0,134.523c33.635,33.644,86.359,36.659,123.556,9.28l114.491,114.497 c5.592,5.586,14.659,5.586,20.256,0c5.592-5.592,5.592-14.659,0-20.25L233.26,222.642z M203.735,213.361 c-25.918,25.925-68.098,25.925-94.028,0c-25.918-25.925-25.918-68.104,0-94.028c25.931-25.928,68.11-25.928,94.028,0 C229.66,145.257,229.66,187.437,203.735,213.361z M395.439,368.206h18.158v45.395h-45.396v-18.158h27.237V368.206z M109.961,395.442h64.557v18.158h-64.557V395.442z M239.082,395.442h64.563v18.158h-64.563V395.442z M18.161,395.442h27.237v18.158 H0.003v-45.395h18.158V395.442z M18.161,303.642H0.003v-64.562h18.158V303.642z M18.161,174.521H0.003v-64.563h18.158V174.521z 	M0.003,0h45.395v18.158H18.161v27.237H0.003V0z M174.519,18.158h-64.557V0h64.557V18.158z M303.646,18.158h-64.569V0h64.569 V18.158z M413.598,0v45.395h-18.158V18.158h-27.237V0H413.598z M395.439,239.079h18.158v64.562h-18.158V239.079z M395.439,109.958 h18.158v64.563h-18.158V109.958z"></path></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Zoom
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+
+                                            <td autocomplete="off">
+                                                <span width="42" height="42" autocomplete="off"
+                                                                         cmd="eraser" title="Eraser"
+                                                                         id="__jsd_tb_test_eraser"
+                                                                         style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                    viewBox="0 0 480.001 480.001"
+                                                    style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><g
+                                                    transform="scale(0.9,0.9) translate(2, 2)"><path
+                                                    d="M333.142,350.846c0.115-0.115,0.215-0.239,0.323-0.357l129.681-129.706c10.878-10.878,16.864-25.368,16.855-40.8 c-0.01-15.409-5.999-29.865-16.854-40.694l-97.844-97.874c-10.853-10.845-25.326-16.817-40.75-16.817 c-15.426,0-29.895,5.974-40.741,16.82L16.855,308.329C5.974,319.21-0.012,333.713,0,349.168 c0.013,15.425,6.002,29.884,16.854,40.7l62.592,62.606c0.061,0.061,0.127,0.112,0.188,0.171c0.174,0.165,0.349,0.331,0.534,0.483 c0.082,0.067,0.171,0.126,0.255,0.19c0.175,0.135,0.349,0.271,0.532,0.395c0.07,0.047,0.145,0.085,0.215,0.13 c0.205,0.131,0.412,0.26,0.627,0.376c0.051,0.026,0.103,0.048,0.154,0.074c0.239,0.123,0.482,0.241,0.732,0.346 c0.033,0.014,0.067,0.024,0.101,0.037c0.269,0.108,0.54,0.208,0.819,0.293c0.034,0.011,0.07,0.017,0.104,0.027 c0.276,0.081,0.556,0.154,0.841,0.211c0.082,0.017,0.165,0.023,0.247,0.038c0.239,0.041,0.479,0.084,0.724,0.107 c0.33,0.033,0.663,0.051,0.998,0.051h137.91h159.308c5.522,0,10-4.478,10-10c0-5.522-4.478-10-10-10H248.566l84.22-84.236 C332.904,351.06,333.027,350.96,333.142,350.846z M220.285,435.404H90.66l-59.675-59.689 c-7.076-7.054-10.977-16.487-10.985-26.563c-0.008-10.106,3.897-19.582,10.996-26.681l129.825-129.803l151.091,151.091 L220.285,435.404z M174.965,178.527L297.953,55.56c7.069-7.069,16.516-10.963,26.6-10.963c10.085,0,19.536,3.895,26.609,10.962 l97.85,97.88c7.08,7.063,10.982,16.493,10.989,26.557c0.006,10.085-3.899,19.547-10.998,26.645l-122.95,122.974L174.965,178.527z"></path></g></svg></span>
+                                                <div autocomplete="off"
+                                                     style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                    Eraser
+                                                </div>
+                                            </td>
+
+                                            <td autocomplete="off">
+                                                <span width="42" height="42" autocomplete="off"
+                                                                         cmd="undo" title="Undo" id="__jsd_tb_test_undo"
+                                                                         style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                    viewBox="0 0 24 24"
+                                                    style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                    d="M0 0h24v24H0z" fill="none"></path><path
+                                                    d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"></path></svg></span>
+                                                <div autocomplete="off"
+                                                     style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                    Undo
+                                                </div>
+                                                <table autocomplete="off" cellspacing="0" cellpadding="0"
+                                                       id="__jsd_tb_test_undo_sub"
+                                                       style="display: none; z-index: 99999999; border-radius: 4px; position: absolute; background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); padding: 2px;">
+                                                    <tbody autocomplete="off">
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off"><span width="42" height="42"
+                                                                                     autocomplete="off" cmd="redo"
+                                                                                     title="Redo"
+                                                                                     parent="__jsd_tb_test_undo"
+                                                                                     style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M0 0h24v24H0z" fill="none"></path><path
+                                                                d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"></path></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Redo
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+
+                                            <td autocomplete="off">
+                                                <span width="42" height="42" autocomplete="off"
+                                                                         cmd="single" title="Single bond"
+                                                                         id="__jsd_tb_test_single"
+                                                                         style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                    viewBox="0 0 100 100"
+                                                    style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><g
+                                                    transform="rotate(45)"><path
+                                                    d="M30 -2 h80 v8 h-80 v-8 z"></path></g></svg></span>
+                                                <div autocomplete="off"
+                                                     style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                    Single
+                                                </div>
+                                                <table autocomplete="off" cellspacing="0" cellpadding="0"
+                                                       id="__jsd_tb_test_single_sub"
+                                                       style="display: none; z-index: 99999999; border-radius: 4px; position: absolute; background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); padding: 2px; margin-left: -25px;">
+                                                    <tbody autocomplete="off">
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off"><span width="42" height="42"
+                                                                                     autocomplete="off" cmd="double"
+                                                                                     title="Double bond"
+                                                                                     parent="__jsd_tb_test_single"
+                                                                                     style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 100 100"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><g
+                                                                transform="rotate(45)"><path
+                                                                d="M30 -12 h80 v8 h-80 v-8 m0 20 h80 v8 h-80 v-8 z"></path></g></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Double
+                                                            </div>
+                                                        </td>
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="triple"
+                                                                title="Triple bond" parent="__jsd_tb_test_single"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 100 100"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><g
+                                                                transform="rotate(45)"><path
+                                                                d="M30 0 h80 v5 h-80 v-5 M30 -10 h80 v5 h-80 v-5 M30 10 h80 v5 h-80 v-5z"></path></g></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Triple
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="up"
+                                                                title="Wedge bond" parent="__jsd_tb_test_single"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 100 100"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M21 19 L90 75 L75 90 L19 21 L21 19 z"></path></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Up
+                                                            </div>
+                                                        </td>
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="down"
+                                                                title="Hash bond" parent="__jsd_tb_test_single"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 100 100"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><g
+                                                                transform="rotate(45)"><path
+                                                                d="M30 -5 h5 v5 h-5 v-5 M50 -5 h5 v8 h-5 v-8 M70 -6 h5 v12 h-5 v-12 M90 -7 h5 v16 h-5 v-16 M110 -8 h5 v20 h-5 v-20"></path></g></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Down
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="wiggly"
+                                                                title="Wiggle bond" parent="__jsd_tb_test_single"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 200 200"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M20 45 a10 10 45 0 1 0 40 v-8 a10 10 45 0 0 0 -24 v-8z m0 32 a10 10 45 0 0 0 40 v-8 a10 10 45 0 1 0 -24 v-8z m0 32 a10 10 45 0 1 0 40 v-8 a10 10 45 0 0 0 -24 v-8z m0 32 a10 10 45 0 0 0 40 v-8 a10 10 45 0 1 0 -24 v-8z m0 32 a10 10 45 0 1 0 40 v-8 a10 10 45 0 0 0 -24 v-8z m0 32 h-14 v8 h14 v-8z m0 -160 h-14 v8 h14 v-8z"
+                                                                transform="rotate(-45 20 20)"></path></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Wiggle
+                                                            </div>
+                                                        </td>
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off"
+                                                                cmd="delocalized" title="Delocalized bond"
+                                                                parent="__jsd_tb_test_single"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 100 100"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><g
+                                                                transform="rotate(45)"><path
+                                                                d="M30 -12 h80 v8 h-80 v-8 m0 20 h15 v8 h-15 v-8 m25 0 h15 v8 h-15 v-8 m25 0 h15 v8 h-15 v-8 m25 0 h8 v8 h-8 v-8 z"></path></g></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Delocalized
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="either"
+                                                                title="Either double bond" parent="__jsd_tb_test_single"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 100 100"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><g
+                                                                transform="rotate(55)"><path
+                                                                d="M30 -10 h80 v8 h-80 v-8z"></path></g><g
+                                                                transform="rotate(30) translate(-3 30)"><path
+                                                                d="M30 -10 h80 v8 h-80 v-8z"></path></g></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Either
+                                                            </div>
+                                                        </td>
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="boldhash"
+                                                                title="Hashed bond" parent="__jsd_tb_test_single"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 100 100"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><g
+                                                                transform="rotate(45)"><path
+                                                                d="M30 -8 h5 v20 h-5 v-20 m10 0 h5 v20 h-5 v-20 m10 0 h5 v20 h-5 v-20 m10 0 h5 v20 h-5 v-20 m10 0 h5 v20 h-5 v-20 m10 0 h5 v20 h-5 v-20 m10 0 h5 v20 h-5 v-20 m10 0 h5 v20 h-5 v-20z m10 0 h5 v20 h-5 v-20"></path></g></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Hashed
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="bold"
+                                                                title="Bold bond" parent="__jsd_tb_test_single"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 100 100"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><g
+                                                                transform="rotate(45)"><path
+                                                                d="M30 -6 h80 v15 h-80 v-15z"></path></g></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Bold
+                                                            </div>
+                                                        </td>
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="dummy"
+                                                                title="Ionic bond" parent="__jsd_tb_test_single"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 100 100"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><g
+                                                                style="opacity:0.2" transform="rotate(45)"><path
+                                                                d="M30 -2 h80 v4 h-80 v-4 z"></path></g></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Ionic
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="unknown"
+                                                                title="Dotted bond" parent="__jsd_tb_test_single"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 100 100"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><g
+                                                                transform="rotate(45)"><path
+                                                                d="M30 -2 h15 v8 h-15 v-8 m25 0 h15 v8 h-15 v-8 m25 0 h15 v8 h-15 v-8 m25 0 h15 v8 h-15 v-8z"></path></g></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Dotted
+                                                            </div>
+                                                        </td>
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="linkage"
+                                                                title="Linkage bond" parent="__jsd_tb_test_single"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 48 48"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M 3 19 l 0 3 l 6 0 l 0 -3 l -6 0 m 9 0 l 0 3 l 6 0 l 0 -3 l -6 0 m 9 0 l 0 3 l 6 0 l 0 -3 l -6 0 m 9 0 l 0 3 l 6 0 l 0 -3 l -6 0 m 9 0 l 0 3 l 6 0 l 0 -3 l -6 0 M 3 29 l 0 3 l 6 0 l 0 -3 l -6 0 m 9 0 l 0 3 l 6 0 l 0 -3 l -6 0 m 9 0 l 0 3 l 6 0 l 0 -3 l -6 0 m 9 0 l 0 3 l 6 0 l 0 -3 l -6 0 m 9 0 l 0 3 l 6 0 l 0 -3 l -6 0 "></path></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Linkage
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="chain"
+                                                                title="Chain Tool" parent="__jsd_tb_test_single"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 100 100"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><g
+                                                                transform="translate(-17 20)"><path
+                                                                d="M30 -2 h22 v20 h20 v20 h20 v20 h15 v6 h-20 v-20 h-20 v-20 h-20 v-20 h-17 z"></path></g></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Chain
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+
+                                            <td autocomplete="off">
+                                                <span width="42" height="42" autocomplete="off"
+                                                                         cmd="e-C" title="Element C"
+                                                                         id="__jsd_tb_test_e-C"
+                                                                         style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                    viewBox="0 0 24 24"
+                                                    style="width: 32px; height: 32px; vertical-align: middle; padding: 10px 5px 0px; border-radius: 4px;"><text
+                                                    x="12" y="12"
+                                                    style="text-anchor: middle;alignment-baseline: central;font-family:Arial;font-weight: bold;font-size: 20px;">C</text></svg></span>
+                                                <div autocomplete="off"
+                                                     style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                    Carbon
+                                                </div>
+                                                <table autocomplete="off" cellspacing="0" cellpadding="0"
+                                                       id="__jsd_tb_test_e-C_sub"
+                                                       style="display: none; z-index: 99999999; border-radius: 4px; position: absolute; background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); padding: 2px; margin-left: -25px;">
+                                                    <tbody autocomplete="off">
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off"><span width="42" height="42"
+                                                                                     autocomplete="off" cmd="e-H"
+                                                                                     title="Element H"
+                                                                                     parent="__jsd_tb_test_e-C"
+                                                                                     style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="width: 32px; height: 32px; vertical-align: middle; padding: 10px 5px 0px; border-radius: 4px;"><text
+                                                                x="12" y="12"
+                                                                style="text-anchor: middle;alignment-baseline: central;font-family:Arial;font-weight: bold;font-size: 20px;">H</text></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Hydrogen
+                                                            </div>
+                                                        </td>
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="e-O"
+                                                                title="Element O" parent="__jsd_tb_test_e-C"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="width: 32px; height: 32px; vertical-align: middle; padding: 10px 5px 0px; border-radius: 4px;"><text
+                                                                x="12" y="12"
+                                                                style="text-anchor: middle;alignment-baseline: central;font-family:Arial;font-weight: bold;font-size: 20px;">O</text></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Oxygen
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="e-N"
+                                                                title="Element N" parent="__jsd_tb_test_e-C"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="width: 32px; height: 32px; vertical-align: middle; padding: 10px 5px 0px; border-radius: 4px;"><text
+                                                                x="12" y="12"
+                                                                style="text-anchor: middle;alignment-baseline: central;font-family:Arial;font-weight: bold;font-size: 20px;">N</text></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Nitrogen
+                                                            </div>
+                                                        </td>
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="e-S"
+                                                                title="Element S" parent="__jsd_tb_test_e-C"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="width: 32px; height: 32px; vertical-align: middle; padding: 10px 5px 0px; border-radius: 4px;"><text
+                                                                x="12" y="12"
+                                                                style="text-anchor: middle;alignment-baseline: central;font-family:Arial;font-weight: bold;font-size: 20px;">S</text></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Sulfur
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="e-P"
+                                                                title="Element P" parent="__jsd_tb_test_e-C"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="width: 32px; height: 32px; vertical-align: middle; padding: 10px 5px 0px; border-radius: 4px;"><text
+                                                                x="12" y="12"
+                                                                style="text-anchor: middle;alignment-baseline: central;font-family:Arial;font-weight: bold;font-size: 20px;">P</text></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Phosphorus
+                                                            </div>
+                                                        </td>
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="e-F"
+                                                                title="Element F" parent="__jsd_tb_test_e-C"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="width: 32px; height: 32px; vertical-align: middle; padding: 10px 5px 0px; border-radius: 4px;"><text
+                                                                x="12" y="12"
+                                                                style="text-anchor: middle;alignment-baseline: central;font-family:Arial;font-weight: bold;font-size: 20px;">F</text></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Fluorine
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="e-Cl"
+                                                                title="Element Cl" parent="__jsd_tb_test_e-C"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="width: 32px; height: 32px; vertical-align: middle; padding: 10px 5px 0px; border-radius: 4px;"><text
+                                                                x="12" y="12"
+                                                                style="text-anchor: middle;alignment-baseline: central;font-family:Arial;font-weight: bold;font-size: 20px;">Cl</text></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Chlorine
+                                                            </div>
+                                                        </td>
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="e-Br"
+                                                                title="Element Br" parent="__jsd_tb_test_e-C"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="width: 32px; height: 32px; vertical-align: middle; padding: 10px 5px 0px; border-radius: 4px;"><text
+                                                                x="12" y="12"
+                                                                style="text-anchor: middle;alignment-baseline: central;font-family:Arial;font-weight: bold;font-size: 20px;">Br</text></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Bromine
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="e-more"
+                                                                title="Element Periodic Table"
+                                                                parent="__jsd_tb_test_e-C"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                P.T.
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+
+                                            <td autocomplete="off">
+                                                <span width="42" height="42" autocomplete="off"
+                                                                         cmd="text" title="Text/Atom Label"
+                                                                         id="__jsd_tb_test_text"
+                                                                         style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                    <svg
+                                                    viewBox="0 0 24 24"
+                                                    style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                        <g><rect
+                                                    fill="none"></rect></g><g><g><g><path
+                                                    d="M2.5,4v3h5v12h3V7h5V4H2.5z M21.5,9h-9v3h3v7h3v-7h3V9z"></path></g></g></g>
+                                                    </svg>
+                                                </span>
+                                                <div autocomplete="off"
+                                                     style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                    Text
+                                                </div>
+                                                <table autocomplete="off" cellspacing="0" cellpadding="0"
+                                                       id="__jsd_tb_test_text_sub"
+                                                       style="display: none; z-index: 99999999; border-radius: 4px; position: absolute; background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); padding: 2px;">
+                                                    <tbody autocomplete="off">
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off">
+                                                            <span width="42" height="42"
+                                                                                     autocomplete="off" cmd="sgroup"
+                                                                                     title="SGroup - Tag Atom/Bond/Bracket"
+                                                                                     parent="__jsd_tb_test_text"
+                                                                                     style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                                    <path
+                                                                d="M9.03 3l-1.11 7.07h2.62l.7-4.5h2.58L11.8 18.43H9.47L9.06 21h7.27l.4-2.57h-2.35l2-12.86h2.58l-.71 4.5h2.65L22 3H9.03zM8 5H4l-.31 2h4L8 5zm-.61 4h-4l-.31 2h4l.31-2zm.92 8h-6L2 19h6l.31-2zm.62-4h-6l-.31 2h6.01l.3-2z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                SGroup
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;">
+                                                            <span
+                                                                width="42" height="42" autocomplete="off" cmd="bracket"
+                                                                title="Bracket" parent="__jsd_tb_test_text"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 100 100"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                                    <path
+                                                                d="M10 20 h20 v8 h-12 v52 h12 v8 h-20 v-52 M90 20 h-20 v8 h12 v52 h-12 v8 h20 z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Bracket
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;">
+                                                            <span
+                                                                width="42" height="42" autocomplete="off" cmd="symbol"
+                                                                title="Symbol" parent="__jsd_tb_test_text"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 1024 1024"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                                    <g
+                                                                transform="scale(0.9,0.9) translate(2, 2)">
+                                                                        <path
+                                                                d="M704 896h256l64-128v256h-384v-214.214c131.112-56.484 224-197.162 224-361.786 0-214.432-157.598-382.266-352-382.266-194.406 0-352 167.832-352 382.266 0 164.624 92.886 305.302 224 361.786v214.214h-384v-256l64 128h256v-32.59c-187.63-66.46-320-227.402-320-415.41 0-247.424 229.23-448 512-448s512 200.576 512 448c0 188.008-132.37 348.95-320 415.41v32.59z"></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Symbol
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+
+                                            <td autocomplete="off">
+                                                <span width="42" height="42" autocomplete="off"
+                                                                         cmd="rectangle" title="Rectangle"
+                                                                         id="__jsd_tb_test_rectangle"
+                                                                         style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                    <svg
+                                                    viewBox="0 0 24 24"
+                                                    style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                    d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path>
+                                                    </svg>
+                                                </span>
+                                                <div autocomplete="off"
+                                                     style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                    Rectangle
+                                                </div>
+                                                <table autocomplete="off" cellspacing="0" cellpadding="0"
+                                                       id="__jsd_tb_test_rectangle_sub"
+                                                       style="display: none; z-index: 99999999; border-radius: 4px; position: absolute; background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); padding: 2px; margin-left: -25px;">
+                                                    <tbody autocomplete="off">
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off">
+                                                            <span width="42" height="42"
+                                                                                     autocomplete="off" cmd="diamond"
+                                                                                     title="Diamond"
+                                                                                     parent="__jsd_tb_test_rectangle"
+                                                                                     style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 512 512"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                                    <path
+                                                                d="M443.92,243.452L273.253,8.786c-8.519-11.714-25.987-11.714-34.506,0L68.08,243.452c-5.44,7.481-5.44,17.615,0,25.095 l170.667,234.667c8.519,11.714,25.987,11.714,34.506,0L443.92,268.548C449.36,261.067,449.36,250.933,443.92,243.452z M256,454.396L111.712,256L256,57.604L400.288,256L256,454.396z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Diamond
+                                                            </div>
+                                                        </td>
+                                                        <td autocomplete="off" style="padding-top: 4px;">
+                                                            <span
+                                                                width="42" height="42" autocomplete="off" cmd="ellipse"
+                                                                title="Ellipse" parent="__jsd_tb_test_rectangle"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                                    <path
+                                                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"></path>
+                                                                </svg>
+                                                            </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Ellipse
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;">
+                                                            <span
+                                                                width="42" height="42" autocomplete="off"
+                                                                cmd="dreversed" title="D Reversed"
+                                                                parent="__jsd_tb_test_rectangle"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 100 100"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                                    <path
+                                                                d="M55 10 a10 10 45 0 0 0 80 h20 v-80 h-20 z"></path><path
+                                                                d="M55 18 a10 10 45 0 0 0 64 h12 v-64 h-12 z"
+                                                                style="fill:#fff"></path>
+                                                                </svg>
+                                                            </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                D Reversed
+                                                            </div>
+                                                        </td>
+                                                        <td autocomplete="off" style="padding-top: 4px;">
+                                                            <span
+                                                                width="42" height="42" autocomplete="off" cmd="dshape"
+                                                                title="D Shape" parent="__jsd_tb_test_rectangle"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 100 100"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M45 10 a10 10 45 0 1 0 80 h-20 v-80 h20 z"></path><path
+                                                                d="M45 18 a10 10 45 0 1 0 64 h-12 v-64 h12 z"
+                                                                style="fill:#fff"></path>
+                                                                </svg>
+                                                            </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                D Shape
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;">
+                                                            <span
+                                                                width="42" height="42" autocomplete="off" cmd="curve"
+                                                                title="Curve" parent="__jsd_tb_test_rectangle"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 392.652 392.652"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M371.439,243.7l-35.961,35.961c11.209-92.047-39.457-184.193-129.211-221.371c-34.202-14.167-71.578-19.149-108.094-14.425 C62.773,48.452,28.825,62.018,0,83.1l17.709,24.215c51.74-37.839,117.938-45.807,177.078-21.308 c85.411,35.379,129.596,128.751,105.878,215.706L242.652,243.7l-21.213,21.213l85.606,85.606l85.606-85.606L371.439,243.7z"></path>
+                                                                </svg>
+                                                            </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Curve
+                                                            </div>
+                                                        </td>
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off" cmd="tlc"
+                                                                title="TLC Plate" parent="__jsd_tb_test_rectangle"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M3 1 h18 v22 h-18 v-22 z"></path><path
+                                                                d="M4 2 h16 v20 h-16 v-20 z" style="fill:#fff"></path><circle
+                                                                cx="8" cy="8" r="2"></circle><circle cx="12" cy="17"
+                                                                                                     r="2"></circle><circle
+                                                                cx="16" cy="12" r="2"></circle></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                TLC
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;">
+                                                            <span
+                                                                width="42" height="42" autocomplete="off"
+                                                                cmd="tlctemplate" title="Template"
+                                                                parent="__jsd_tb_test_rectangle"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                                    <path
+                                                                d="M2 1 h16 v20 h-16 v-20 z"></path><path
+                                                                d="M3 2 h14 v18 h-14 v-18z" style="fill:#fff"></path><path
+                                                                d="M4 3 h16 v20 h-16 v-20 z"></path><path
+                                                                d="M5 4 h14 v18 h-14 v-18 z" style="fill:#fff"></path><circle
+                                                                cx="8" cy="8" r="2"></circle><circle cx="12" cy="17"
+                                                                                                     r="2"></circle><circle
+                                                                cx="16" cy="12" r="2"></circle>
+                                                                </svg>
+                                                            </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Template
+                                                            </div>
+                                                        </td>
+                                                        <td autocomplete="off" style="padding-top: 4px;">
+                                                            <span
+                                                                width="42" height="42" autocomplete="off"
+                                                                cmd="electrophoresis" title="Electrophoresis Gel Plate"
+                                                                parent="__jsd_tb_test_rectangle"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 100 100"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                                    <path
+                                                                d="M1 15 h14 v15 h14 v-15 h14 v15 h14 v-15 h14 v15 h14 v-15 h14 v70 h-98 v-70z"></path><path
+                                                                d="M3 17 h10 v15 h18 v-15 h10 v15 h18 v-15 h10 v15 h18 v-15 h10 v66 h-94 v-66z"
+                                                                style="fill:#fff"></path><path
+                                                                d="M15 40 h14 v5 h-14 v-5 m0 15 h14 v5 h-14 v-5 z"></path><path
+                                                                d="M43 55 h14 v5 h-14 v-5 m0 15 h14 v5 h-14 v-5 z"></path><path
+                                                                d="M71 40 h14 v5 h-14 v-5 m0 15 h14 v5 h-14 v-5 z"></path></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Electrophoresis
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;">
+                                                            <span
+                                                                width="42" height="42" autocomplete="off"
+                                                                cmd="assaycurve" title="Assay Curve"
+                                                                parent="__jsd_tb_test_rectangle"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 175 175"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                                    <path
+                                                                d="M 8 36 L 167 36 L 167 39 L 8 39 L 8 36 M 8 39 L 8 141 L 11 141 L 11 39 L 8 39 M 11 141 L 167 141 L 167 39 L 164 39 L 164 138 L 11 138 L 11 141 M 11 131 Q 82 125 97 81 Q 108 47 164 41 L 164 46 Q 112 50 101 86 Q 86 129 11 136 L 11 131"></path><path
+                                                                d="M 96 39 L 96 138 L 97 138 L 97 39 L 96 39"></path>
+                                                                </svg>
+                                                            </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Assay
+                                                            </div>
+                                                        </td>
+                                                        <td autocomplete="off" style="padding-top: 4px;">
+                                                            <span
+                                                                width="42" height="42" autocomplete="off"
+                                                                cmd="assaycurve2"
+                                                                title="Michaelis-Menten Enzyme Kinetics"
+                                                                parent="__jsd_tb_test_rectangle"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 175 175"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                                    <path
+                                                                d="M 8 36 L 167 36 L 167 39 L 8 39 L 8 36 M 8 39 L 8 141 L 11 141 L 11 39 L 8 39 M 11 141 L 167 141 L 167 39 L 164 39 L 164 138 L 11 138 L 11 141 M 11 131 Q 28 78 79 57 Q 103 50 164 47 L 164 52 Q 110 53 80 62 Q 33 81 14 137 L 11 131"></path><path
+                                                                d="M 44 39 L 44 138 L 46 138 L 46 39 L 44 39"></path>
+                                                                </svg>
+                                                            </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Km
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;"><span
+                                                                width="42" height="42" autocomplete="off"
+                                                                cmd="assaycurve3" title="Linear Fit"
+                                                                parent="__jsd_tb_test_rectangle"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;"><svg
+                                                                viewBox="0 0 175 175"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M 8 36 L 167 36 L 167 39 L 8 39 L 8 36 M 8 39 L 8 141 L 11 141 L 11 39 L 8 39 M 11 141 L 167 141 L 167 39 L 164 39 L 164 138 L 11 138 L 11 141 M 11 131 Q 46 111 94 84 Q 121 69 164 47 L 164 52 Q 129 71 97 88 Q 49 115 11 137 L 11 131"></path></svg></span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Linear
+                                                            </div>
+                                                        </td>
+                                                        <td autocomplete="off" style="padding-top: 4px;">
+                                                            <span
+                                                                width="42" height="42" autocomplete="off" cmd="spectrum"
+                                                                title="Spectrum" parent="__jsd_tb_test_rectangle"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 100 100"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                                    <path
+                                                                d="M5 15 h90 v70 h-90 v-70z">
+                                                                    </path><path
+                                                                d="M7 17 h86 v66 h-86 v-66z" style="fill:#fff"></path><path
+                                                                d="M15 85 h5 v-20 h-5 v20 m15 0 h5 v-50 h-5 v50 m15 0 h5 v-30 h-5 v30 m15 0 h5 v-15 h-5 v15 m15 0 h5 v-50 h-5 v50 z"></path>
+                                                                </svg>
+                                                            </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Spectrum
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+
+                                            <td autocomplete="off">
+                                                <span width="42" height="42" autocomplete="off"
+                                                                         cmd="chargep" title="Increase charges"
+                                                                         id="__jsd_tb_test_chargep"
+                                                                         style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                    <svg
+                                                    viewBox="0 0 24 24"
+                                                    style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                        <path
+                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z">
+                                                        </path>
+                                                    </svg>
+                                                </span>
+                                                <div autocomplete="off"
+                                                     style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                    Charge
+                                                </div>
+                                                <table autocomplete="off" cellspacing="0" cellpadding="0"
+                                                       id="__jsd_tb_test_chargep_sub"
+                                                       style="display: none; z-index: 99999999; border-radius: 4px; position: absolute; background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); padding: 2px;">
+                                                    <tbody autocomplete="off">
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off">
+                                                            <span width="42" height="42"
+                                                                                     autocomplete="off" cmd="chargen"
+                                                                                     title="Descrease charges"
+                                                                                     parent="__jsd_tb_test_chargep"
+                                                                                     style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                            <svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                                <path
+                                                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11H7v-2h10v2z">
+
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Charge
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+
+                                            <td autocomplete="off">
+                                                <span width="42" height="42" autocomplete="off"
+                                                                         cmd="arrow" title="Reaction arrow"
+                                                                         id="__jsd_tb_test_arrow"
+                                                                         style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                    <svg
+                                                    viewBox="0 0 24 24"
+                                                    style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><rect
+                                                    fill="none"></rect>
+                                                        <path
+                                                    d="M15,5l-1.41,1.41L18.17,11H2V13h16.17l-4.59,4.59L15,19l7-7L15,5z"></path>
+                                                    </svg>
+                                                </span>
+                                                <div autocomplete="off"
+                                                     style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                    Reaction
+                                                </div>
+                                                <table autocomplete="off" cellspacing="0" cellpadding="0"
+                                                       id="__jsd_tb_test_arrow_sub"
+                                                       style="display: none; z-index: 99999999; border-radius: 4px; position: absolute; background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); padding: 2px;">
+                                                    <tbody autocomplete="off">
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off">
+                                                            <span width="42" height="42"
+                                                                                     autocomplete="off" cmd="plus"
+                                                                                     title="Reaction Plus"
+                                                                                     parent="__jsd_tb_test_arrow"
+                                                                                     style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 1024 1024"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                                    <g
+                                                                transform="scale(0.9,0.9) translate(2, 2)">
+                                                                        <path
+                                                                d="M992 384h-352v-352c0-17.672-14.328-32-32-32h-192c-17.672 0-32 14.328-32 32v352h-352c-17.672 0-32 14.328-32 32v192c0 17.672 14.328 32 32 32h352v352c0 17.672 14.328 32 32 32h192c17.672 0 32-14.328 32-32v-352h352c17.672 0 32-14.328 32-32v-192c0-17.672-14.328-32-32-32z">
+                                                                        </path>
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Plus
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;">
+                                                            <span
+                                                                width="42" height="42" autocomplete="off" cmd="rxn"
+                                                                title="Clean up reaction" parent="__jsd_tb_test_arrow"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;"><path
+                                                                d="M16,11h-1V3c0-1.1-0.9-2-2-2h-2C9.9,1,9,1.9,9,3v8H8c-2.76,0-5,2.24-5,5v7h18v-7C21,13.24,18.76,11,16,11z M19,21h-2v-3 c0-0.55-0.45-1-1-1s-1,0.45-1,1v3h-2v-3c0-0.55-0.45-1-1-1s-1,0.45-1,1v3H9v-3c0-0.55-0.45-1-1-1s-1,0.45-1,1v3H5v-5 c0-1.65,1.35-3,3-3h8c1.65,0,3,1.35,3,3V21z"></path><path
+                                                                d="M22 8 l-4-4v3H3v2h15v3z"></path>
+                                                                </svg>
+                                                            </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Clean
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;">
+                                                            <span
+                                                                width="42" height="42" autocomplete="off" cmd="copyprod"
+                                                                title="Copy reactants to products"
+                                                                parent="__jsd_tb_test_arrow"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 24 24"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                                    <g>
+                                                                        <path
+                                                                d="M6 13c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z M30 13c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"
+                                                                transform="scale(0.7, 0.7)">
+                                                                        </path><path
+                                                                d="M13,4l4,4l-4,4V9h-4V7h4V4z"
+                                                                transform="translate(0, 4)"></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                R-&gt;P
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;">
+                                                            <span
+                                                                width="42" height="42" autocomplete="off" cmd="rxnmap"
+                                                                title="Map reaction" parent="__jsd_tb_test_arrow"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 1024 1024"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                                    <g
+                                                                transform="scale(0.9,0.9) translate(2, 2) rotate(90 512 512)"><path
+                                                                d="M704 512v384h64v-384h160l-192-192-192 192z"></path><path
+                                                                d="M64 192h96v64h-96v-64z"></path><path
+                                                                d="M192 192h96v64h-96v-64z"></path><path
+                                                                d="M320 192h64v96h-64v-96z"></path><path
+                                                                d="M64 416h64v96h-64v-96z"></path><path
+                                                                d="M160 448h96v64h-96v-64z"></path><path
+                                                                d="M288 448h96v64h-96v-64z"></path><path
+                                                                d="M64 288h64v96h-64v-96z"></path><path
+                                                                d="M320 320h64v96h-64v-96z"></path><path
+                                                                d="M320 704v192h-192v-192h192zM384 640h-320v320h320v-320z"></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Map
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr autocomplete="off">
+                                                        <td autocomplete="off" style="padding-top: 4px;">
+                                                            <span
+                                                                width="42" height="42" autocomplete="off" cmd="rxnmap2"
+                                                                title="Clear reaction map" parent="__jsd_tb_test_arrow"
+                                                                style="text-align: center; padding: 2px 2px 0px; vertical-align: middle; width: 42px; height: 42px;">
+                                                                <svg
+                                                                viewBox="0 0 1024 1024"
+                                                                style="vertical-align: middle; width: 32px; height: 32px; padding: 10px 5px 0px; border-radius: 4px;">
+                                                                <g
+                                                                transform="scale(0.9,0.9) translate(2, 2) rotate(90 512 512)"><path
+                                                                d="M704 512v384h64v-384h160l-192-192-192 192z"></path><path
+                                                                d="M64 192h96v64h-96v-64z"></path><path
+                                                                d="M192 192h96v64h-96v-64z"></path><path
+                                                                d="M320 192h64v96h-64v-96z"></path><path
+                                                                d="M64 416h64v96h-64v-96z"></path><path
+                                                                d="M160 448h96v64h-96v-64z"></path><path
+                                                                d="M288 448h96v64h-96v-64z"></path><path
+                                                                d="M64 288h64v96h-64v-96z"></path><path
+                                                                d="M320 320h64v96h-64v-96z"></path><path
+                                                                d="M320 704v192h-192v-192h192zM384 640h-320v320h320v-320z"></path>
+                                                                </g>
+                                                                    <path
+                                                                fill="red" stroke="#fff"
+                                                                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                                                                transform="scale(20 20) translate(3 21.5)">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <div autocomplete="off"
+                                                                 style="width: 42px; font-size: 9px; text-align: center; color: gray; white-space: nowrap; overflow: hidden;">
+                                                                Clear
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+
+                                        </tr>
+
+                                        <tr autocomplete="off" style="height: 6px;">
+                                            <td autocomplete="off" title="click to expand"
+                                                style="height: 10px; background: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20style%3D%22fill%3A%23ddd%3B%22%20viewBox%3D%220%200%2042%206%22%3E%3Cpath%20d%3D%22m%2021%206%20l%205%20-3%20l%200%20-2%20l%20-5%203%20l%20-5%20-3%20l%200%202%20l%205%203%22/%3E%3C/svg%3E&quot;) center center no-repeat;">
+                                            </td>
+                                            <td autocomplete="off" title="click to expand"
+                                                style="height: 10px; background: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20style%3D%22fill%3A%23ddd%3B%22%20viewBox%3D%220%200%2042%206%22%3E%3Cpath%20d%3D%22m%2021%206%20l%205%20-3%20l%200%20-2%20l%20-5%203%20l%20-5%20-3%20l%200%202%20l%205%203%22/%3E%3C/svg%3E&quot;) center center no-repeat;">
+                                            </td>
+                                            <td autocomplete="off" title="click to expand"
+                                                style="height: 10px; background: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20style%3D%22fill%3A%23ddd%3B%22%20viewBox%3D%220%200%2042%206%22%3E%3Cpath%20d%3D%22m%2021%206%20l%205%20-3%20l%200%20-2%20l%20-5%203%20l%20-5%20-3%20l%200%202%20l%205%203%22/%3E%3C/svg%3E&quot;) center center no-repeat;">
+                                            </td>
+                                            <td autocomplete="off" title="click to expand"
+                                                style="height: 10px; background: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20style%3D%22fill%3A%23ddd%3B%22%20viewBox%3D%220%200%2042%206%22%3E%3Cpath%20d%3D%22m%2021%206%20l%205%20-3%20l%200%20-2%20l%20-5%203%20l%20-5%20-3%20l%200%202%20l%205%203%22/%3E%3C/svg%3E&quot;) center center no-repeat;">
+                                            </td>
+                                            <td autocomplete="off" title="click to expand"
+                                                style="height: 10px; background: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20style%3D%22fill%3A%23ddd%3B%22%20viewBox%3D%220%200%2042%206%22%3E%3Cpath%20d%3D%22m%2021%206%20l%205%20-3%20l%200%20-2%20l%20-5%203%20l%20-5%20-3%20l%200%202%20l%205%203%22/%3E%3C/svg%3E&quot;) center center no-repeat;"></td>
+                                            <td autocomplete="off">
+                                            </td>
+                                            <td autocomplete="off" title="click to expand"
+                                                style="height: 10px; background: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20style%3D%22fill%3A%23ddd%3B%22%20viewBox%3D%220%200%2042%206%22%3E%3Cpath%20d%3D%22m%2021%206%20l%205%20-3%20l%200%20-2%20l%20-5%203%20l%20-5%20-3%20l%200%202%20l%205%203%22/%3E%3C/svg%3E&quot;) center center no-repeat;">
+                                            </td>
+                                            <td autocomplete="off" title="click to expand"
+                                                style="height: 10px; background: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20style%3D%22fill%3A%23ddd%3B%22%20viewBox%3D%220%200%2042%206%22%3E%3Cpath%20d%3D%22m%2021%206%20l%205%20-3%20l%200%20-2%20l%20-5%203%20l%20-5%20-3%20l%200%202%20l%205%203%22/%3E%3C/svg%3E&quot;) center center no-repeat;">
+                                            </td>
+                                            <td autocomplete="off" title="click to expand"
+                                                style="height: 10px; background: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20style%3D%22fill%3A%23ddd%3B%22%20viewBox%3D%220%200%2042%206%22%3E%3Cpath%20d%3D%22m%2021%206%20l%205%20-3%20l%200%20-2%20l%20-5%203%20l%20-5%20-3%20l%200%202%20l%205%203%22/%3E%3C/svg%3E&quot;) center center no-repeat;">
+                                            </td>
+                                            <td autocomplete="off" title="click to expand"
+                                                style="height: 10px; background: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20style%3D%22fill%3A%23ddd%3B%22%20viewBox%3D%220%200%2042%206%22%3E%3Cpath%20d%3D%22m%2021%206%20l%205%20-3%20l%200%20-2%20l%20-5%203%20l%20-5%20-3%20l%200%202%20l%205%203%22/%3E%3C/svg%3E&quot;) center center no-repeat;">
+                                            </td>
+                                            <td autocomplete="off" title="click to expand"
+                                                style="height: 10px; background: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20style%3D%22fill%3A%23ddd%3B%22%20viewBox%3D%220%200%2042%206%22%3E%3Cpath%20d%3D%22m%2021%206%20l%205%20-3%20l%200%20-2%20l%20-5%203%20l%20-5%20-3%20l%200%202%20l%205%203%22/%3E%3C/svg%3E&quot;) center center no-repeat;">
+                                            </td>
+                                            <td autocomplete="off" title="click to expand"
+                                                style="height: 10px; background: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20style%3D%22fill%3A%23ddd%3B%22%20viewBox%3D%220%200%2042%206%22%3E%3Cpath%20d%3D%22m%2021%206%20l%205%20-3%20l%200%20-2%20l%20-5%203%20l%20-5%20-3%20l%200%202%20l%205%203%22/%3E%3C/svg%3E&quot;) center center no-repeat;">
+                                            </td>
+                                            <td autocomplete="off" title="click to expand"
+                                                style="height: 10px; background: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20style%3D%22fill%3A%23ddd%3B%22%20viewBox%3D%220%200%2042%206%22%3E%3Cpath%20d%3D%22m%2021%206%20l%205%20-3%20l%200%20-2%20l%20-5%203%20l%20-5%20-3%20l%200%202%20l%205%203%22/%3E%3C/svg%3E&quot;) center center no-repeat;">
+                                            </td>
+                                            <td autocomplete="off" title="click to expand"
+                                                style="height: 10px; background: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20style%3D%22fill%3A%23ddd%3B%22%20viewBox%3D%220%200%2042%206%22%3E%3Cpath%20d%3D%22m%2021%206%20l%205%20-3%20l%200%20-2%20l%20-5%203%20l%20-5%20-3%20l%200%202%20l%205%203%22/%3E%3C/svg%3E&quot;) center center no-repeat;">
+                                            </td>
+                                            <td autocomplete="off" title="click to expand"
+                                                style="height: 10px; background: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20style%3D%22fill%3A%23ddd%3B%22%20viewBox%3D%220%200%2042%206%22%3E%3Cpath%20d%3D%22m%2021%206%20l%205%20-3%20l%200%20-2%20l%20-5%203%20l%20-5%20-3%20l%200%202%20l%205%203%22/%3E%3C/svg%3E&quot;) center center no-repeat;">
+                                            </td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <tr autocomplete="off">
+                                <td autocomplete="off" colspan="2" style="border-top: 1px solid rgb(204, 204, 204);">
+                                    <div class="JSDraw" id="test" skin="w8" style="width: 660px; height: 230px; text-align: left; cursor: default; background: rgb(255, 255, 255); user-select: none;" >
+                                        <svg viewBox="0 0 660 230" width="660" height="230" style="display: block;">
+                                        </svg>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            </tr>
+                        </tbody>
+                    </table>
                 </td>
             </tr>
-           </tbody>
-           </table>
-          </td>
-        </tr>
-     </tbody>
+         </tbody>
+
+
+
     </table>
 
-</body>
+    <button onclick="alert(JSDraw.get(&quot;test&quot;).getMolfile())">Get Molfile</button>
+    <button onclick="JSDraw.get(&quot;test&quot;).sss(JSDraw.get(&quot;div1&quot;))">Toxicity Level Search</button>
+
+    <br>
+    <hr>
+
+    " Copyright 2022,  Scilligence ( " <a href="http://www.scilligence.com/">http://www.scilligence.com/</a> ")"
+
+    <br>
+
+
+
+
+    </body>
 </html>
