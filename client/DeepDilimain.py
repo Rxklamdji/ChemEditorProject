@@ -30,12 +30,12 @@ test_data = data[data.final_year>=1997]
 data_split = pd.read_csv('data_split.csv')# path for data_split.csv
 mcc = pd.read_csv('combined_score.csv') # path for combined_score.csv
 
-base_path = '/account/tli/CDER/results/check' # path for base classifiers
-probability_path = '/account/tli/CDER/results/check/probabilities_output' # path for the combined probabilities (model-level representations)
+base_path = r'C:\\Users\\Romeo.Klamadji\\PycharmProjects\\ChemEditorProject' # path for base classifiers
+probability_path = r'C:\\Users\Romeo.Klamadji\\PycharmProjects\\ChemEditorProject' # path for the combined probabilities (model-level representations)
 name = 'test' # can be any name
 
 model_path = 'mold2_best_model.h5' # path for mold2_best_model.h5
-result_path = '/account/tli/CDER/results/check/result' # path for the final DeepDILI predictions
+result_path = r'C:\\Users\\Romeo.Klamadji\\PycharmProjects\\ChemEditorProject' # path for the final DeepDILI predictions
 
 ### run the scripts
 mold2_knn.generate_baseClassifiers(features, data, test_data, data_split, name, base_path)
